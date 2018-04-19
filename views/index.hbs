@@ -1,0 +1,93 @@
+<!-- Landing Page -->
+<div class="landing-page">
+	<!-- Title/Description -->
+	<div class="container">
+		<div class="header-wrapper">
+			<h1 class="top-header">Travelr</h1>
+			<h3 class="sub-header">Find out more about the cities around the globe</h3>
+			{{#if login}}
+			<div class="message-wrapper">
+				<div class="scrollable-menu" id="message"></div>
+			</div>
+			{{/if}}
+		</div>
+	</div>
+
+	<!-- Search -->
+	<div class="container search">
+		<div class="image-container">
+			<div class="form-group">
+				<p class="header">Already know where you want to travel to?</p>
+				<div class="input-group">
+	      			<input list="searchlist" type="text" class="form-control" id="searchinput" placeholder="Search for...">
+							<datalist id="searchlist">
+						  </datalist>
+	      			<span class="input-group-btn">
+	        			<button class="btn btn-default" id="search-bar-btn" type="button">Search city</button>
+	     		 	</span>
+	    		</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<h3>Select your most desirable quality of life factors below, and we'll give you a list of the top places you can live.</h3>
+			<label for="continent"></label>
+			<select class="form-control" id="continent">
+				<option value="continent">Continent</option>
+			</select>
+			<label for="country"></label>
+			<select class="form-control" id="country">
+			</select>
+			<label for="sel1"></label>
+			<select class="form-control" id="sel1">
+				<option>Category 1</option>
+			</select>
+			<label for="sel2"></label>
+			<select class="form-control" id="sel2">
+				<option>Category 2</option>
+			</select>
+			<label for="sel3"></label>
+			<select class="form-control" id="sel3">
+				<option>Category 3</option>
+			</select>
+
+			<br />
+
+			<button class="btn btn-default" id="search-btn" type="submit">Search</button>
+
+			<br/>
+			<br/>
+		</div>
+
+	</div>
+</div>
+
+<!-- Results -->
+<div class="search-results">
+	<div class="container" id="search-results-container">
+		<h1 class="explore-header">Explore cities</h1>
+		<br>
+		<div class="row gallery-wrapper" id="gallery1"></div>
+		<div class="row gallery-wrapper" id="gallery2"></div>
+		<div class="row gallery-wrapper" id="gallery3"></div>
+		<a href="/"><button class="btn btn-default" id="return-to-landing-page-btn1" type="button">Return</button></a>
+	</div>
+</div>
+
+<!-- Info Page -->
+<div class="city-info">
+	<div class="container" id="city-info-container">
+	</div>
+	<div class="container" id="city-info-review">
+		{{#if login}}
+			<label for="comment">Notes about the city:</label>
+  			<textarea class="form-control" rows="5" id="comment"></textarea>
+		{{/if}}
+		<br>
+		<button class="btn btn-default" id="return-to-landing-page-btn2" type="button">Return</button>
+		{{#if login}}
+  			<button class="btn btn-default" id="save-review" type="button">Save Note</button>
+			<button class="btn btn-default" id="save-city" type="button">Save City</button>
+			<button class="btn btn-default" id="remove-city" type="button">Remove City</button>
+		{{/if}}
+	</div>
+</div>
